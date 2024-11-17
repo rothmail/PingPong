@@ -1,0 +1,75 @@
+body {
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+h1, h3 {
+    text-align: center;
+    color: #333;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.container {
+    position: relative;
+    width: 1000px;
+    height: 500px;
+    border: 2px solid black;
+    margin: 0 auto; 
+}
+
+.raquete1, .raquete2, .bola {
+    position: absolute;
+    width: 6vw;
+    height: 10vw;
+    
+}
+
+.raquete1 {
+    background-image: url("rqtBLUE.png");
+    width: 6vw;
+    height: 11vw;
+    background-size: cover;
+}
+
+.raquete2 {
+    background-image: url('rqtRED.png');
+    width: 6vw;
+    height: 11vw;
+    float: inline-end;
+    margin-left: -1vw;
+    background-size: cover;
+}
+
+.bola {
+    background-image: url(bola.png);
+    background-size: cover;
+    width: 60px;
+    height: 50px; 
+}
+
+#play, #pause {
+    margin-top: 20px;
+    height: 50px;
+    width: 100px;
+    background-color: blue;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 15px;
+}
+
+#play {
+    margin-left: 40vw;
+}
