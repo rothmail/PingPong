@@ -26,6 +26,10 @@ raquete2.style.left = `${bolaAreaWidth - raquete2.offsetWidth}px`; // Raquete 2 
 playButton.addEventListener('click', () => {
     bolaSpeedX = 5;
     bolaSpeedY = 5;
+
+    fase01();
+    fase02();
+    fase03();
 });
 
 // Pausar o jogo
@@ -61,6 +65,8 @@ function movebola() {
     // Atualiza posição visual da bola
     bola.style.left = bolaPosX + 'px';
     bola.style.top = bolaPosY + 'px';
+
+    // Verifica condições para avançar de fase
 }
 
 // Função para detectar colisões com as raquetes
@@ -94,6 +100,34 @@ function resetBall() {
     bolaPosY = bolaAreaHeight / 2 - bola.offsetHeight / 2;
     bolaSpeedX = Math.random() > 0.5 ? 5 : -5;
     bolaSpeedY = Math.random() > 0.5 ? 5 : -5;
+}
+
+// Fase 1, bola mais rápida
+function fase01() {
+    if (pointsPlayer1 === 3 || pointsPlayer2 === 3) {
+        alert("Fase 2! Agora a bola está mais rápida!");
+        bolaSpeedX = 30;
+        bolaSpeedY = 30;
+    }
+}
+
+// Fase 2, raquetes menores
+function fase02() {
+    if (pointsPlayer1 === 5 || pointsPlayer2 === 5) {
+        alert("Fase 3! Agora as raquetes estão menores!");
+        raquete1.style.width = "3vw";
+        raquete1.style.height = "5vw";
+
+        raquete2.style.width = "3vw";
+        raquete2.style.height = "5vw";
+    }
+}
+
+// Fase 3, bola com vida própria
+function fase03() {
+    if (pointsPlayer1 === 7 || pointsPlayer2 === 7) {
+        alert("Fase 4! Agora a bola tem vida própria!");
+    }
 }
 
 // Movimenta as raquetes de acordo com as teclas pressionadas
